@@ -63,13 +63,8 @@ Identifies infrastructure inefficiency by calculating the divergence between a m
 \mathrm{Misallocation}_{it} = \tilde{K}_{it} - \tilde{M}_i
 ```
 
-#### Stage 4: Counterfactual Reallocation (Non-Linear Optimization)
-
-A discrete-increment greedy algorithm reallocates capacity to equalize marginal network returns across nodes. Because the model operates on non-linear transformations ($`y = \sqrt{p}`$ and $`x = \operatorname{asinh}(kW)`$), each step updates marginal gain via analytical chain-rule derivatives:
-
-```math
-\mathrm{Gain}_j = \mathrm{Multiplier}_j \times 2\sqrt{p_j} \times \frac{1}{\sqrt{1 + kW_j^2}}
-```
+**Stage 4: Counterfactual Reallocation (Non-Linear Optimization)**  
+A discrete-increment greedy algorithm reallocates capacity to equalize marginal network returns across nodes. Because the model operates on non-linear transformations ( $y = \sqrt{p}$ and $x = \mathrm{asinh}(kW)$ ), each step updates marginal gain via analytical chain-rule derivatives:
 
 The full endogenous network feedback is re-evaluated at each increment through:
 
